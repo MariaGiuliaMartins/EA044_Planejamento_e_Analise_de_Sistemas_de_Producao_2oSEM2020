@@ -1,1 +1,1 @@
-# EA044_Planejamento_e_Analise_de_-Sistemas_-de_Producao_2oSEM2020
+# EA044 - Planejamento e Analise de Sistemas de Produção 2oSEM2020
