@@ -78,6 +78,6 @@ sol = op.minimize(lucro, q1, bounds = limites) #aplicando o solver
 for i in sol.x: resultado = i #salvando nosso resultado em uma forma bonita
 
 #printando resultados de interesse
-print("Quantidade de Creme a ser produzida:", resultado.round())
-print("Preço do Creme:", preco(sol.x).round())
-print("Lucro correspondente a essa produção:", -lucro(sol.x).round())
+print("Quantidade de Creme a ser produzida:", round(resultado, 2))
+print("Preço do Creme:", round(preco(sol.x), 2))
+print("Lucro correspondente a essa produção:", round(-lucro(sol.x), 2))
