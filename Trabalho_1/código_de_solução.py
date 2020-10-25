@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 #Código para solucionar Trabalho T1 EA044 - Formulação de Modelos de Otimização
 ## Aluno(a): Maria Giulia Martins
-## RA: 202819
 ## Curso: 34 - Engenharia de Computação
 
 #-------------------------------------------------------------------------------
@@ -60,6 +59,7 @@ def lucro(q):
 ##Bibliotecas que usaremos
 import scipy.optimize as op
 import numpy as np
+from scipy.optimize import Bounds
 
 q1 = np.array([1]) #array de entrada
 
@@ -71,7 +71,9 @@ r1 = receita(q1) #receita
 
 l1 = lucro(q1) #lucro
 
-sol = op.minimize(lucro, q1) #aplicando o solver
+limites = Bounds([0], [np.inf]) #nossos limitantes
+
+sol = op.minimize(lucro, q1, bounds = limites) #aplicando o solver
 
 for i in sol.x: resultado = i #salvando nosso resultado em uma forma bonita
 
@@ -79,4 +81,3 @@ for i in sol.x: resultado = i #salvando nosso resultado em uma forma bonita
 print("Quantidade de Creme a ser produzida:", resultado.round())
 print("Preço do Creme:", preco(sol.x).round())
 print("Lucro correspondente a essa produção:", -lucro(sol.x).round())
-
